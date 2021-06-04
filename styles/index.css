@@ -1,0 +1,376 @@
+* {
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-brown);
+}
+
+/* VARIABLES*/
+:root {
+  /* Colores */
+  --color-red: #d03b40;
+  --color-beige: #ded6c0;
+  --color-white: #f5f0ed;
+  --color-brown: #241d1b;
+  /* Colores de las tipografías */
+  --texto-ligth: #f5f0ed;
+  --texto-dark: #3c3c3b;
+  /* Tamaños */
+  --text-lvl-1: 44px;
+  --text-lvl-2: 28px;
+  --text-lvl-3: 24px;
+  --paragrap-text: 16px;
+  --buttons: 14px;
+}
+
+/* ESTILOS GENERALES DE FUENTES*/
+h1 {
+  font-size: var(--text-lvl-1);
+}
+
+h2 {
+  font-size: var(--text-lvl-2);
+}
+
+h3 {
+  font-size: var(--text-lvl-3);
+}
+
+p {
+  font-size: var(--paragrap-text);
+}
+
+a {
+  font-size: var(--buttons);
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  margin: 0;
+}
+
+/* CSS GRID */
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+body {
+  display: grid;
+  grid-template: 100vh max-content max-content / 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* GRID DE INFORMATION SECTION */
+.information {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+
+/* GRID DE PRODUCT SECTION */
+.product-container {
+  display: grid;
+  grid-template: 1fr 1fr / repeat(2, 1fr 2fr);
+  grid-gap: 30px;
+}
+
+/* FLEX BOX */
+header,
+.header-navbar__logo,
+.header-navbar__menu__button,
+.container,
+.information-container__card,
+.banner,
+.product-container__img {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.header-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-container__information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* ESTILOS DEL HEADER */
+header {
+  background: url(../assets/Fondo1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 20%;
+}
+
+.container {
+  text-align: center;
+  color: var(--texto-ligth);
+}
+
+hr {
+  width: 200px;
+  border: solid 2px var(--color-white);
+  margin: 30px auto;
+}
+
+/* ESTILOS DEL NAVBAR */
+.header-navbar {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+}
+
+/* ESTILO DEL MENÚ */
+.header-navbar__menu__button {
+  display: none;
+}
+
+.header-navbar__navegation li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.header-navbar__navegation ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header-navbar__navegation a {
+  color: var(--texto-ligth);
+  font-size: var(--buttons);
+  text-decoration: none;
+}
+
+.header-navbar__navegation {
+  align-self: flex-end;
+}
+
+/* ESTILOS DE INFORMATION SECTION */
+.information {
+  text-align: center;
+}
+
+.information-container__card {
+  padding: 0 15%;
+}
+
+.information-container__card h2 {
+  margin-top: 90px;
+  margin-bottom: 15px;
+}
+
+.information-container__card p {
+  margin-bottom: 90px;
+}
+
+.card-red {
+  background-color: var(--color-red);
+}
+
+.card-red h2,
+.card-red p {
+  color: var(--color-beige);
+}
+
+.card-beige {
+  background-color: var(--color-beige);
+}
+
+.card-beige h2,
+.card-beige p {
+  color: var(--color-red);
+}
+
+.information-container__card.card-beige a {
+  color: var(--color-red);
+}
+
+/* ESTILOS DEL BANNER */
+.banner {
+  background: url(../assets/Fondo2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 20%;
+  width: 100%;
+  height: 80vh;
+}
+
+.banner a {
+  width: max-content;
+  margin: 30px auto 0 auto;
+  padding: 20px;
+  color: var(--texto-ligth);
+  font-size: var(--buttons);
+  text-decoration: none;
+  border: solid 2px var(--color-white);
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+}
+.banner a:hover {
+  background-color: var(--color-white);
+  color: var(--texto-dark);
+}
+
+/* ESTILOS DE PRODUCT SECTION */
+.product-container {
+  background-color: var(--color-white);
+  padding: 30px;
+}
+
+.product-container__img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-container__img img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-container__information h3 {
+  margin-bottom: 15px;
+}
+
+/* ESTILOS DEL FOOTER */
+footer {
+  display: block;
+}
+
+footer p {
+  color: var(--color-white);
+  margin: 50px auto 50px 30px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 990px) {
+  .product-container {
+    grid-template: 1fr / 1fr 2fr;
+    grid-gap: 40px;
+  }
+
+  .product-container {
+    padding: 30px 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    padding: 0 10%;
+  }
+
+  .information {
+    grid-template: 1fr 1fr / 1fr;
+  }
+}
+
+@media (max-width: 660px) {
+  .product-container {
+    grid-template: repeat(4, min-content 1fr) / 1fr;
+    grid-gap: 30px;
+  }
+
+  .product-container {
+    padding: 30px;
+  }
+
+  .product-container__img {
+    padding: 30px 25% 0 25%;
+  }
+
+  .product-container__information {
+    justify-content: flex-start;
+  }
+
+  .product-container__information h3 {
+    align-self: center;
+  }
+}
+
+@media (max-height: 500px) {
+  hr {
+    display: none;
+  }
+
+  header h1,
+  .banner h2 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 764px) {
+  .header-navbar__menu__button {
+    display: block;
+  }
+
+  .header-navbar__navegation li {
+    display: block;
+    text-align: end;
+    margin-left: 0;
+    font-weight: normal;
+    line-height: 2em;
+  }
+
+  .header-navbar__navegation {
+    overflow: hidden;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    padding: 0;
+    border-radius: 7px;
+    background-color: var(--color-red);
+    max-height: 0;
+    transition: max-height 0.5s;
+  }
+
+  .header-navbar__navegation a {
+    display: block;
+    padding: 0 10px;
+    color: var(--color-beige);
+    transition: background-color 0.5s;
+    transition: color 0.5s;
+  }
+
+  .header-navbar__navegation a:hover {
+    background-color: var(--color-beige);
+    color: var(--color-red);
+  }
+
+  .header-navbar__navegation.menu-desplegado {
+    max-height: 160px;
+  }
+}
